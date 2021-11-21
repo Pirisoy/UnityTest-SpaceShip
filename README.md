@@ -25,4 +25,6 @@ We have an object for ship data that contains data like movement speed, rotation
 We have an object for weapon data that contains data like bullet force and fire rate. (In the future, each weapon may have its damage and each asteroid has a different hp).\
 We have an object for GameData, it contains some data like max life and min/max time between each enemy spawn.\
 \
+In GamePlay scene, in the canvas, there is an object named PhonePanel, if we enable this, we can play the game just using touch screen, so it's possible to play this game on mobile devices. It has a joystick for movement and a button to fire bullets.
+\
 If there is any question, please send me an email to hamed.hbs@gmail.com.
