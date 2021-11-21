@@ -87,6 +87,8 @@ public class Weapon : MonoBehaviour
 
         foreach (var b in allBullets)
         {
+            if (b == null)
+                continue;
             b.gameObject.SetActive(false);
             BackBulletToPull(b);
         }
