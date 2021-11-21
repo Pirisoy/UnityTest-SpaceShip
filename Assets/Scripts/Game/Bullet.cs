@@ -5,7 +5,7 @@ public class Bullet : OurOfViewDiabler, IPoolObject
 {
     public Rigidbody2D Rb { get; private set; }
 
-    private PlayerWeapon weapon;
+    private Weapon weapon;
     private float shootTime;
 
     // this will calls when spawn from pool
@@ -25,7 +25,7 @@ public class Bullet : OurOfViewDiabler, IPoolObject
 
         weapon.BackBulletToPull(this);
     }
-    public void SetWeapon(PlayerWeapon weapon)
+    public void SetWeapon(Weapon weapon)
     {
         this.weapon = weapon;
     }

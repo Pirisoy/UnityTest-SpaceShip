@@ -25924,9 +25924,9 @@ GameObject:
   - component: {fileID: 1667865416}
   - component: {fileID: 1667865417}
   - component: {fileID: 1667865418}
-  - component: {fileID: 1667865419}
   - component: {fileID: 1667865420}
   - component: {fileID: 1667865421}
+  - component: {fileID: 1667865419}
   m_Layer: 0
   m_Name: Player
   m_TagString: playerShip
@@ -25942,7 +25942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667865415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.82, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1199478873}
@@ -25997,13 +25997,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667865415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab47b69e1b491146b7b457fe21efafe, type: 3}
+  m_Script: {fileID: 11500000, guid: 032c4c786fe9c4c42885be29d02c8d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7087469517392317880, guid: 1218de723fad878478e8553a7d2106ee, type: 3}
   firePoint: {fileID: 2029889914}
   bulletSfx: {fileID: 8300000, guid: 025aa80ce83394dbb984ac462d965da6, type: 3}
-  bulletForce: 10
 --- !u!61 &1667865420
 BoxCollider2D:
   m_ObjectHideFlags: 0
