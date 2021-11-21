@@ -8,7 +8,7 @@ It has a MainMenuController to handle this event.\
 \
 \
 In the GamePlay scene, we have some Managers, like GameManager, EnemySpawner, SoundManager.\
-GameManager handles most of the events, like changing UI, handling hp and scores. We could separate these tasks in the future.\
+GameManager handles most of the events, like changing UI, handling hp and scores. We can separate these tasks in the future.\
 EnemySpawner handles the spawning of enemies. For now, it's just a random enemy at random times. EnemySpawner has a pool for enemies to reduce total instantiates.\
 SoundManager handles the sounds of the game.\
 \
