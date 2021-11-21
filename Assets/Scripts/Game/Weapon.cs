@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Ship))]
@@ -8,17 +9,17 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected Bullet bulletPrefab;
     [SerializeField] protected Transform firePoint;
     [SerializeField] protected AudioClip bulletSfx;
+    [SerializeField] protected WeaponData weaponData;
 
 
     private float lastFireTime;
     protected ObjectPool<Bullet> bulletPool;
-
-    private Ship ship;
+    private List<Bullet> allBullets;
 
     private void Awake()
     {
-        ship = GetComponent<PlayerShip>();
         bulletPool = new ObjectPool<Bullet>();
+        allBullets = new List<Bullet>();
     }
 
     public void StartFire()
@@ -32,12 +33,12 @@ public class Weapon : MonoBehaviour
 
     protected IEnumerator CorFire()
     {
-        if (Time.realtimeSinceStartup - lastFireTime < 1f / ship.GetShipData().fireRate)
-            yield return new WaitForSeconds((1f / ship.GetShipData().fireRate) - (Time.realtimeSinceStartup - lastFireTime));
+        if (Time.realtimeSinceStartup - lastFireTime < 1f / weaponData.fireRate)
+            yield return new WaitForSeconds((1f / weaponData.fireRate) - (Time.realtimeSinceStartup - lastFireTime));
         while (true)
         {
             Fire();
-            yield return new WaitForSeconds(1f / ship.GetShipData().fireRate);
+            yield return new WaitForSeconds(1f / weaponData.fireRate);
         }
     }
 
@@ -54,10 +55,14 @@ public class Weapon : MonoBehaviour
             bullet.gameObject.SetActive(true);
         }
         else
+        {
             bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
+            allBullets.Add(bullet);
+        }
+
         bullet.SetWeapon(this);
-        bullet.Shoot(firePoint.up, ship.GetShipData().bulletForce);
+        bullet.Shoot(firePoint.up, weaponData.bulletForce);
 
 
         SoundManager.Singelton.PlayActionClip(bulletSfx);
@@ -69,9 +74,21 @@ public class Weapon : MonoBehaviour
     private void OnDisable()
     {
         StopFire();
+        ClearAllBullets();
     }
     private void OnDestroy()
     {
         StopAllCoroutines();
+    }
+
+    private void ClearAllBullets()
+    {
+        bulletPool = new ObjectPool<Bullet>();
+
+        foreach (var b in allBullets)
+        {
+            b.gameObject.SetActive(false);
+            BackBulletToPull(b);
+        }
     }
 }

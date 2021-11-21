@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcb693418da55644898b90d8cda62bc9, type: 3}
-  m_Name: DefaultShip
+  m_Name: PlayerShip
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotateSpeed: 1500

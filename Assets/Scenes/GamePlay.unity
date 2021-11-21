@@ -26003,6 +26003,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7087469517392317880, guid: 1218de723fad878478e8553a7d2106ee, type: 3}
   firePoint: {fileID: 2029889914}
   bulletSfx: {fileID: 8300000, guid: 025aa80ce83394dbb984ac462d965da6, type: 3}
+  weaponData: {fileID: 11400000, guid: 3864c02b773bc95428e244717199f08c, type: 2}
 --- !u!61 &1667865420
 BoxCollider2D:
   m_ObjectHideFlags: 0
