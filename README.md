@@ -24,3 +24,5 @@ We have 1 object for each asteroid that contains its data, like speed, score, ty
 We have an object for ship data that contains data like movement speed, rotation speed.\
 We have an object for weapon data that contains data like bullet force and fire rate. (In the future, each weapon may have its damage and each asteroid has a different hp).\
 We have an object for GameData, it contains some data like max life and min/max time between each enemy spawn.\
+\
+If there is any question, please send me an email to hamed.hbs@gmail.com.
